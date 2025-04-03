@@ -8,6 +8,11 @@ use Symfony\Component\HttpFoundation\Response;
 
 class BasicAuthMiddleware
 {
+    /**
+     * @param Request $request
+     * @param Closure $next
+     * @return Response
+     */
     public function handle(Request $request, Closure $next): Response
     {
         $username = env('BASIC_AUTH_USER', 'admin');

@@ -8,8 +8,11 @@ use Illuminate\Http\JsonResponse;
 
 class TestController extends Controller
 {
-    protected $testService;
+    protected TestServiceInterface $testService;
 
+    /**
+     * @param TestServiceInterface $testService
+     */
     public function __construct(TestServiceInterface $testService)
     {
         $this->testService = $testService;

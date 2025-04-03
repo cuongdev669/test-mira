@@ -42,14 +42,14 @@ docker run --rm -v $(pwd)/backend:/app composer create-project --prefer-dist lar
 cp backend/.env.example backend/.env
 ```
 ### Update env
-`
+```
 DB_CONNECTION=mysql
 DB_HOST=db
 DB_PORT=3306
 DB_DATABASE=laravel
 DB_USERNAME=user
 DB_PASSWORD=password
-`
+```
 ```
 docker run --rm -v $(pwd)/frontend:/app node:18 bash -c "cd /app && npm create vite@latest . --template vue"
 ```
