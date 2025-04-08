@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Services\SerialPasoService;
+use App\Services\SerialPasoServiceInterface;
 use Illuminate\Support\ServiceProvider;
 use App\Services\TestServiceInterface;
 use App\Services\TestService;
@@ -20,6 +22,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(TestServiceInterface::class, TestService::class);
         $this->app->singleton(AccountServiceInterface::class, AccountService::class);
         $this->app->singleton(AccountRepositoryInterface::class, AccountRepository::class);
+        $this->app->singleton(SerialPasoServiceInterface::class, SerialPasoService::class);
     }
 
     /**
