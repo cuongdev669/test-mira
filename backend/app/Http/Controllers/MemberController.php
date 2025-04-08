@@ -8,14 +8,14 @@ use Illuminate\Http\JsonResponse;
 
 class MemberController extends Controller
 {
-    protected MemberServiceInterface $peopleService;
+    protected MemberServiceInterface $memberService;
 
     /**
-     * @param MemberServiceInterface $peopleService
+     * @param MemberServiceInterface $memberService
      */
-    public function __construct(MemberServiceInterface $peopleService)
+    public function __construct(MemberServiceInterface $memberService)
     {
-        $this->peopleService = $peopleService;
+        $this->memberService = $memberService;
     }
 
     /**
@@ -24,7 +24,7 @@ class MemberController extends Controller
      */
     public function find(Request $request): JsonResponse
     {
-        $result = $this->peopleService->findFurthest($request);
+        $result = $this->memberService->findFurthest($request);
 
         return response()->json(['result' => $result]);
     }
