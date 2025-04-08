@@ -8,6 +8,8 @@ use App\Services\StudentStatService;
 use App\Services\StudentStatServiceInterface;
 use App\Services\CityService;
 use App\Services\CityServiceInterface;
+use App\Services\MemberService;
+use App\Services\MemberServiceInterface;
 use Illuminate\Support\ServiceProvider;
 use App\Services\TestServiceInterface;
 use App\Services\TestService;
@@ -29,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
         $this->app->singleton(SerialPasoServiceInterface::class, SerialPasoService::class);
         $this->app->singleton(StudentStatServiceInterface::class, StudentStatService::class);
         $this->app->singleton(CityServiceInterface::class, CityService::class);
+        $this->app->singleton(MemberServiceInterface::class, MemberService::class);
     }
 
     /**
